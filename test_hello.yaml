@@ -1,0 +1,9 @@
+test_double:
+- input: 2
+  expected: 4
+- input: 5
+  expected: 10
+- input: 7
+  expected: 14
+- input: 8
+  expected: 15 # an error test

@@ -1,0 +1,6 @@
+pytest
+parametrize-from-file
+
+# report
+pytest-html
+pytest-json-report
