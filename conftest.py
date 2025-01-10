@@ -19,15 +19,15 @@ def pytest_html_results_summary(prefix, summary, postfix):
 
 # Modifying the results table
 def pytest_html_results_table_header(cells):
-    cells.insert(2, "<th>Input</th>")
-    cells.insert(3, "<th>Expected</th>")
-    cells.insert(4, "<th>Output</th>")
+    cells.insert(2, '<th class="sortable" data-column-type="input">Input</th>')
+    cells.insert(3, '<th class="sortable" data-column-type="expected">Expected</th>')
+    cells.insert(4, '<th class="sortable" data-column-type="output">Output</th>')
 
 def pytest_html_results_table_row(report, cells):
     user_properties = dict(report.user_properties)
-    cells.insert(2, '<td>{}</td>'.format(user_properties.get("input", "N/A")))
-    cells.insert(3, '<td>{}</td>'.format(user_properties.get("expected", "N/A")))
-    cells.insert(4, '<td>{}</td>'.format(user_properties.get("output", "N/A")))
+    cells.insert(2, '<td class="col-input">{}</td>'.format(user_properties.get("input", "N/A")))
+    cells.insert(3, '<td class="col-expected">{}</td>'.format(user_properties.get("expected", "N/A")))
+    cells.insert(4, '<td class="col-output">{}</td>'.format(user_properties.get("output", "N/A")))
 
 # Extra content
 @pytest.hookimpl(hookwrapper=True)

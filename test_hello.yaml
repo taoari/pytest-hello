@@ -6,4 +6,6 @@ test_double:
 - input: 7
   expected: 14
 - input: 8
-  expected: 15 # an error test
+  expected: 16 
+- input: 6
+  expected: 11 # an error test
